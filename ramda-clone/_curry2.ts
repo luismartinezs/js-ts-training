@@ -1,7 +1,10 @@
+// REF https://github.com/ramda/ramda/blob/v0.29.0/source/internal/_curry2.js
+
 import { Function } from "ts-toolbelt"
 import _curry1 from "./_curry1"
 
 export default function _curry2<F extends (...args: readonly any[]) => any>(fn: F): Function.Curry<F> {
+  // NOTE type ParamTypes = Parameters<F> conflicts with List type from ts-toolbelt
   type ParamTypes = readonly any[]
 
   return function f2(this: unknown, ...args: ParamTypes) {
