@@ -1,0 +1,1 @@
+Run typescript with `npx tsx`
